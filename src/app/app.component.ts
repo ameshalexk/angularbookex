@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'book';
+  // title = 'book';
+  formState: boolean = true;
+
+  toggleForm() {
+    console.log('toggle' + this.formState)
+    this.formState = !this.formState;
+  }
+
 }

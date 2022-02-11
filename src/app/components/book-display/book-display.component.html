@@ -1,0 +1,30 @@
+<div style="padding: 20px;">
+  <h2 class="table">Books in Database</h2>
+  <div style="margin: auto auto; width: 60%;margin-top: 20px;">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Book Cover</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of bookList">
+          <td>{{item.id}}</td>
+          <td>{{item.title}}</td>
+          <td>{{item.author}}</td>
+          <img src={{item.img}} alt={{item.title}}>
+          <td>
+            <button class="btn btn-primary" (click)="deleteBookById(item.id)">
+              Delete
+            </button>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

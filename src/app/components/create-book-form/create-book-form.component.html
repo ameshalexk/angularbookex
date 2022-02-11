@@ -1,0 +1,43 @@
+<div style="margin-top: 20px;" class="createForm">
+  <!-- *ngIf="form; then first;" -->
+  <h2>
+    Create Book Form
+  </h2>
+
+  <div #first>
+
+    <form [formGroup]="myForm" style="width: 70%; margin: auto auto; margin-top: 20px;" (submit)="onSubmit(myForm)">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" placeholder="Enter Title" formControlName="title">
+      </div>
+      <div class="form-text" style="color: red" *ngIf="validField('title')">
+        min length is 3
+      </div>
+      <div class="mb-3">
+        <label for="Author" class="form-label">Author</label>
+        <input type="text" class="form-control" id="author" placeholder="Enter Author name" formControlName="author">
+      </div>
+
+
+      <div class="mb-3">
+        <label for="img" class="form-label">Book Cover</label>
+        <input type="text" class="form-control" id="img" placeholder="Image URL" formControlName="img">
+      </div>
+      <div *ngIf="validField('img')">
+
+        <div class="form-text" style="color: red" *ngIf="myForm.hasError('minLength', 'img')">
+          min length is 7
+        </div>
+        <div class="form-text" style="color: red" *ngIf="myForm.hasError('pattern', 'img')">
+          http
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Submit</button>
+    </form>
+
+  </div>
+
+
+
+</div>
