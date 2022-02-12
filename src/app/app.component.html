@@ -1,12 +1,18 @@
 <div class="container">
-
+  <!-- {{cartLength}} -->
   <app-banner></app-banner>
 
-  <button class="btn btn-primary" (click)="toggleForm()"> ADD</button>
+  <!-- <button class="btn btn-primary" (click)="toggleForm()"> ADD</button> -->
 
-  <app-book-display></app-book-display>
+  <!-- <app-create-book-form [formState]="formState"></app-create-book-form> -->
 
-  <app-create-book-form [formState]="formState"></app-create-book-form>
+  <!-- <app-book-display (nameEvent)="changeFromSibling($event)"></app-book-display> -->
+
+  <!-- <app-login></app-login> -->
+
+  <router-outlet></router-outlet>
+
+
 
   <div style="height: 200px">
 

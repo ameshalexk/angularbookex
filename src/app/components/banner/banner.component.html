@@ -1,31 +1,56 @@
 <header>
-  <title>BookApp</title>
   <h1 class="dislay-3">Book Website</h1>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" routerLink="/">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
+          <a class="nav-link" routerLink="/bookform">Add Book</a>
+          <a class="nav-link" routerLink="/books">Book Table</a>
+          <a class="nav-link" routerLink="/login">Login</a>
+        </ul>
+        <ul class="navbar-nav">
+          <i (click)="openModal()" class="fa" style="font-size:42px; cursor: pointer; ">&#xf07a;</i>
+          <span class='badge badge-warning' id='lblCartCount'> {{cartLength.length }} </span>
         </ul>
       </div>
     </div>
   </nav>
 
-
 </header>
+
+<!-- <ul *ngFor="let book of cartLength">{{book.title}}</ul> -->
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+        <button type="button" (click)="closeModal()" class="btn" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h3>Books added to Cart : </h3>
+        <p *ngIf="cartLength.length === 0">
+          No books added to cart.
+        </p>
+        <ul *ngFor="let book of cartLength">{{book.title}}{{book.author}}</ul>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal()">Close</button>
+        <div *ngIf="cartLength.length > 0">
+          <button type="button" class="btn btn-primary" routerLink="/bookform" (click)="closeModal()">Checkout</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

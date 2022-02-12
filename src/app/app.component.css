@@ -1,0 +1,10 @@
+button {
+  /* display: inline-block;
+  margin: auto auto;
+  text-align:center; */
+}
+.container button {
+  margin: 0 auto;
+    display: block;
+
+}

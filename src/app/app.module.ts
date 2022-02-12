@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { BookDisplayComponent } from './components/book-display/book-display.component';
 import { CreateBookFormComponent } from './components/create-book-form/create-book-form.component';
+import { LoginComponent } from './components/login/login.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BannerComponent,
     BookDisplayComponent,
-    CreateBookFormComponent
+    CreateBookFormComponent,
+    LoginComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

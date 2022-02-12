@@ -1,6 +1,6 @@
 <div style="padding: 20px;">
   <h2 class="table">Books in Database</h2>
-  <div style="margin: auto auto; width: 60%;margin-top: 20px;">
+  <div style="margin: auto auto; width: 92%;margin-top: 20px;">
     <table class="table">
       <thead>
         <tr>
@@ -18,8 +18,13 @@
           <td>{{item.author}}</td>
           <img src={{item.img}} alt={{item.title}}>
           <td>
-            <button class="btn btn-primary" (click)="deleteBookById(item.id)">
+            <button class="btn btn-danger" (click)="deleteBookById(item.id)">
               Delete
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-primary" (click)="addToCart(item.id)">
+              Add To Cart
             </button>
           </td>
 

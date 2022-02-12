@@ -1,8 +1,10 @@
 <div style="margin-top: 20px;" class="createForm">
-  <!-- *ngIf="form; then first;" -->
+  <!-- *ngIf="formState" -->
   <h2>
     Create Book Form
   </h2>
+
+  <button class="btn btn-danger" (click)="newData()">Next Data</button>
 
   <div #first>
 
